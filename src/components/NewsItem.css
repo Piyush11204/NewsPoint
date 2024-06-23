@@ -1,0 +1,113 @@
+.card-text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 25px;
+    height: 52px;
+    max-height: 52px;
+    font-size: 18px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.card-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 25px;
+    height: 52px;
+    max-height: 52px;
+    font-size: 22px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+}
+.card{
+    display: inline-flex;
+    background-color: rgb(255, 255, 255);
+    margin:30px 60px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    
+    width: 375px;
+    height:480px;
+}
+.card-img-top{
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+
+/* CSS */
+
+
+/* CSS */
+.button-40 {
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: .75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+.button-40:hover {
+  background-color: #374151;
+}
+
+.button-40:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-40 {
+    padding: .75rem 1.5rem;
+  }
+}
+
+.date-time{
+    content: ' ';
+    margin-RIGHT: 16PX;
+    color: #6B7280;
+    text-align: end;
+    font-size: 16px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 74%;
+}
+
+.nav-link{
+    cursor: pointer;
+}
+
+body{
+    background: rgb(22, 151, 153);
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+.box{
+  display: flex;
+  align-items:center ;
+}
