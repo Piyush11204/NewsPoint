@@ -1,54 +1,129 @@
+import { useState } from "react";
+import {
+  Menu,
+} from "lucide-react";
 
+const Navbar = ({ setCategory }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-const Nevbar = ({ setCategory }) => {
-    return (
-        <div className="nevbar">
-            <nav className="navbar navbar-expand-lg fixed-top  navbar-dark bg-dark">
-                <div className="container-fluid">
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a className="navbar-brand" href="#"><span className="badge bg-light fs-4 text-dark"> News Point</span></a>
-                        
-                        <ul className="navbar-nav me-auto mb-4 mb-lg-0">
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Latest</a>
-                            </li>
-
-                            <div className="collapse navbar-collapse" id="navbarNav">
-                                <ul className="navbar-nav">
-                                    <li className="nav-item">
-                                        <div className="nav-link" onClick={() => setCategory("technology")}>Technology</div>
-                                    </li>
-                                    <li className="nav-item">
-                                        <div className="nav-link" onClick={() => setCategory("business")}>Business</div>
-                                    </li>
-                                    <li className="nav-item">
-                                        <div className="nav-link" onClick={() => setCategory("health")}>Health</div>
-                                    </li>
-                                    <li className="nav-item">
-                                        <div className="nav-link" onClick={() => setCategory("science")}>Science</div>
-                                    </li>
-                                    <li className="nav-item">
-                                        <div className="nav-link" onClick={() => setCategory("sports")}>Sports</div>
-                                    </li>
-                                    <li className="nav-item">
-                                        <div className="nav-link" onClick={() => setCategory("entertainment")}>Entertainment</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </ul>
-                        <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
-
-                </div>
-            </nav>
+  return (
+    <div className="bg-gray-900 text-white shadow-lg fixed top-0 left-0 w-full z-50">
+      <div className="container mx-auto flex items-center justify-between px-4 py-3">
+        <div className="flex items-center space-x-2">
+          <button
+            className="lg:hidden p-2 rounded-md text-gray-300 hover:text-white focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <Menu size={24} />
+          </button>
+          <a href="#" className="text-lg font-bold text-white">
+            News Point
+          </a>
         </div>
-    )
-}
 
-export default Nevbar
+        <div className="hidden lg:flex space-x-6">
+          <button
+            onClick={() => setCategory("technology")}
+            className="hover:text-gray-400 flex items-center space-x-1"
+          >
+           
+            <span>Technology</span>
+          </button>
+          <button
+            onClick={() => setCategory("business")}
+            className="hover:text-gray-400 flex items-center space-x-1"
+          >
+           
+            <span>Business</span>
+          </button>
+          <button
+            onClick={() => setCategory("health")}
+            className="hover:text-gray-400 flex items-center space-x-1"
+          >
+    
+            <span>Health</span>
+          </button>
+          <button
+            onClick={() => setCategory("science")}
+            className="hover:text-gray-400 flex items-center space-x-1"
+          >
+            {/* <Flask size={20} /> */}
+            <span>Science</span>
+          </button>
+          <button
+            onClick={() => setCategory("sports")}
+            className="hover:text-gray-400 flex items-center space-x-1"
+          >
+            {/* <Football size={20} /> */}
+            <span>Sports</span>
+          </button>
+          <button
+            onClick={() => setCategory("entertainment")}
+            className="hover:text-gray-400 flex items-center space-x-1"
+          >
+           
+            <span>Entertainment</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-gray-800">
+          <div className="space-y-2 px-4 py-2">
+            <button
+              onClick={() => setCategory("all categories")}
+              className="block text-white hover:text-gray-400"
+            >
+              Latest
+            </button>
+            <button
+              onClick={() => setCategory("technology")}
+              className="block text-white hover:text-gray-400  items-center space-x-1"
+            >
+              
+              <span>Technology</span>
+            </button>
+            <button
+              onClick={() => setCategory("business")}
+              className="block text-white hover:text-gray-400  items-center space-x-1"
+            >
+           
+              <span>Business</span>
+            </button>
+            <button
+              onClick={() => setCategory("health")}
+              className="block text-white hover:text-gray-400  items-center space-x-1"
+            >
+              
+              <span>Health</span>
+            </button>
+            <button
+              onClick={() => setCategory("science")}
+              className="block text-white hover:text-gray-400  items-center space-x-1"
+            >
+
+              <span>Science</span>
+            </button>
+            <button
+              onClick={() => setCategory("sports")}
+              className="block text-white hover:text-gray-400  items-center space-x-1"
+            >
+
+              <span>Sports</span>
+            </button>
+            <button
+              onClick={() => setCategory("entertainment")}
+              className="block text-white hover:text-gray-400 md:items-center items-center space-x-1"
+            >
+            
+              <span>Entertainment</span>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Navbar;
